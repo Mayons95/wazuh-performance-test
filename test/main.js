@@ -9,7 +9,8 @@ module.exports = async function(context, commands) {
   
     try {
       await agentDashboard(context, commands);
-    //   await securityEvent(context, commands);
+      await securityEvent(context, commands);
+      
       // Stop and collect the metrics
       return commands.measure.stop();
     } catch (e) {
