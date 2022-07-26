@@ -3,14 +3,12 @@ const securityEvent = require('./modules/security-events-module');
 
 module.exports = async function(context, commands) {
     // Navigate to a URL, but do not measure the URL
-    await commands.navigate(
-      'http://localhost:5601'
-    );
+    // await commands.navigate(SERVER_URL);
   
     try {
       await agentDashboard(context, commands);
-      await securityEvent(context, commands);
-      
+    //   await securityEvent(context, commands);
+
       // Stop and collect the metrics
       return commands.measure.stop();
     } catch (e) {
