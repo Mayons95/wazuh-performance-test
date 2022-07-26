@@ -1,13 +1,13 @@
 module.exports = async function(context, commands) {
     // Navigate to a URL, but do not measure the URL
-    await commands.navigate(
-      'http://localhost:5601'
-    );
+    // await commands.navigate(
+    //   'http://localhost:5601'
+    // );
   
     try {
       // Start collecting metrics
-      await commands.measure.start('login')
-      await commands.wait.bySelector('button[data-test-subj="toggleNavButton"]', 500)
+      await commands.measure.start('security-events-module')
+      await commands.wait.bySelector('button[data-test-subj="toggleNavButton"]', 5000)
       await commands.click.bySelector('button[data-test-subj="toggleNavButton"]')
       await commands.wait.bySelector('a[href$="/app/wazuh"]', 5000)
       await commands.click.bySelector('a[href$="/app/wazuh"]')
